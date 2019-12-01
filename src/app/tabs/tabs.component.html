@@ -1,0 +1,12 @@
+<div class="tabs__titles">
+    <div
+        *ngFor="let tab of tabs; trackBy: trackByFunc"
+        class="tabs__title"
+        [class.tabs__title--active]="tab.active"
+        (click)="activateTab(tab)"
+    >
+        <ng-template [ngTemplateOutlet]="tab.tabTitle.tabTitleTemplate"></ng-template>
+    </div>
+</div>
+
+<ng-template tabContent></ng-template>
